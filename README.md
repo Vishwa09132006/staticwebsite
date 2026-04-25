@@ -1,106 +1,158 @@
-Static Website Hosting on AWS (React + Vite + Amplify)
-🚀 Project Overview
+# 🌐 Static Website Hosting on AWS (React + Vite + Amplify)
 
-This project demonstrates how to build and deploy a modern React application using Vite and host it on AWS using a fully managed, production-ready architecture.
+## 🚀 Project Overview
 
-Instead of just following commands, this README explains why each tool, service, and command is used — which is what recruiters actually care about.
+This project demonstrates how I built and deployed a React application using Vite and hosted it on AWS using fully managed cloud architecture.
 
-🧠 What This Project Shows
-Frontend development (React + Vite)
-Version control with Git
-Cloud deployment using AWS Amplify
-CI/CD (automatic deployments on every push)
-Understanding of CDN + scalable architecture
-🏗️ Architecture (High-Level)
+---
+
+## 🧠 What I did
+
+- Building a React app using Vite
+- Using Git and GitHub for version control
+- Deploying applications to the cloud
+- Understanding CI/CD pipelines
+- Using a CDN for fast global delivery
+
+---
+
+## 🏗️ Architecture
+
+```
 Developer → GitHub → AWS Amplify → CloudFront CDN → Users
-🔹 Why this architecture?
-No servers needed → lower cost & maintenance
-Global CDN (CloudFront) → fast load times worldwide
-Git-based deployment → industry standard workflow
+```
 
-AWS Amplify internally uses:
+### Why This Architecture?
 
-S3 → stores static files
-CloudFront → delivers content globally
+- ✅ No servers required (serverless)
+- ✅ Scales automatically
+- ✅ Fast performance using CDN
+- ✅ Continuous deployment on every push
 
-This allows the app to scale automatically with traffic. fileciteturn0file0
+---
 
-📦 Step 1: Create React App (Vite)
-Command:
+## 🛠️ Tech Stack
+
+| Technology        | Purpose                  |
+| ----------------- | ------------------------ |
+| React (Vite)      | Frontend framework       |
+| JavaScript        | Programming language     |
+| Git & GitHub      | Version control          |
+| AWS Amplify       | Cloud deployment & CI/CD |
+| Amazon S3         | Static file storage      |
+| Amazon CloudFront | CDN for global delivery  |
+
+Note: Amazon S3 and Amazon CloudFront are automatically integrated in AWS Amplify which provides fully managed serverless hosting
+
+---
+
+## 📦 Project Setup
+
+### Create React App
+
+```bash
 npm create vite@latest staticwebsite -- --template react
 cd staticwebsite
 npm install
 npm run dev
-💡 Why?
-vite → fast build tool (faster than Create React App)
-npm install → installs dependencies
-npm run dev → starts local development server
+```
 
-👉 This lets you build and test your app locally before deploying.
+**Why these commands?**
 
-🧪 Step 2: Initialize Git & Push to GitHub
-Commands:
+- `npm create vite@latest` → Creates a React project
+- `npm install` → Installs all project dependencies
+- `npm run dev` → Runs the local development server
+
+---
+
+## 🔁 Git Setup & Deployment
+
+```bash
 git init
 git add .
 git commit -m "first commit"
-git remote add origin git@github.com:<username>/staticwebsite.git
+git remote add origin git@github.com:<your-username>/staticwebsite.git
 git branch -M main
 git push -u origin main
-💡 Why?
-git init → starts version control
-git add . → stages all files
-git commit → saves a snapshot of your project
-git remote add origin → connects your repo to GitHub
-git push → uploads your code
 
-👉 This is required because AWS Amplify pulls your code from GitHub. fileciteturn0file0
+```
 
-☁️ Step 3: Deploy with AWS Amplify
-What you do:
-Go to Amplify Console
-Click Create New App
-Connect GitHub repository
-Select main branch
-Deploy
-⚙️ What Amplify Does Behind the Scenes
-🔹 Build Phase
-Detects your React app
-Runs build commands automatically
+- Tracks all code changes over time
+- Required for CI/CD integration with AWS Amplify
 
-👉 Why? Because your source code is not optimized for production.
+---
 
-🔹 Hosting Phase
-Uploads build files to S3
-Distributes via CloudFront CDN
+## Deploy with AWS Amplify
 
-👉 Why?
+### Steps
 
-S3 → cheap and reliable storage
-CloudFront → fast global delivery
-🔹 CI/CD Pipeline
+1. Go to the [AWS Amplify Console](https://console.aws.amazon.com/amplify)
+2. Click **"Create New App"**
+3. Connect your GitHub repository
+4. Select the `main` branch
+5. Click **Deploy**
 
-Every time you run:
+---
 
-git push
+## What Happens During Deployment
 
-Amplify will:
+### Build Phase
 
-Pull new code
-Build app
-Deploy automatically
+- Amplify detects your React app
+- Runs build commands automatically
 
-👉 This is called continuous deployment, a key industry skill. fileciteturn0file0
+### Hosting Phase
 
-🌍 Live Deployment
+- Files are stored in **Amazon S3**
+- Content is delivered via **CloudFront CDN**
 
-After deployment, Amplify gives a URL like:
+### CI/CD Pipeline
 
+Every `git push` automatically triggers:
+
+```
+git push → Build → Deploy → Live Site Updated
+```
+
+---
+
+## Live Website
+
+After deployment, your app will be available at:
+
+```
 https://your-app.amplifyapp.com
+```
 
-👉 Your app is now publicly accessible worldwide.
+---
 
-💸 Cost Explanation
-Typically $0.50 – $3/month depending on usage fileciteturn0file0
-Why so cheap?
-No servers running
-Pay only for storage + requests
+## Cost Estimate
+
+| Resource            | Estimated Cost        |
+| ------------------- | --------------------- |
+| AWS Amplify Hosting | ~$0.01/build minute   |
+| Amazon S3 Storage   | ~$0.023/GB            |
+| CloudFront CDN      | ~$0.0085/10k requests |
+| **Total (typical)** | **~$0.50 – $3/month** |
+
+> 💡 Very low cost because no servers are running 24/7.
+
+---
+
+## Common Issues & Fixes
+
+| Issue            | Fix                                         |
+| ---------------- | ------------------------------------------- |
+| App not updating | Run `git push` to trigger a new deployment  |
+| Build failed     | Check the Amplify build logs in the console |
+| Blank page       | Ensure `npm run build` works locally first  |
+
+---
+
+## 👤 Author
+
+**Vishwa Patel** — Learning Cloud Engineering, majoring in Computer Science @ CUNY Queens College  
+Building hands-on AWS projects on the path to a Cloud Engineering Internship.
+
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?logo=github)](https://github.com/<your-username>)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://linkedin.com/in/<your-username>)
