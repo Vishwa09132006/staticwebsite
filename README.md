@@ -149,7 +149,37 @@ https://your-app.amplifyapp.com
 
 ---
 
-## 👤 Author
+## Clean Up Resources
+
+### Why Clean Up?
+
+To avoid unexpected AWS charges, it is recommended to delete the app and all resources created during this project.
+
+---
+
+### Delete the Amplify App
+
+1. Open the [AWS Amplify Console](https://console.aws.amazon.com/amplify)
+2. In the left navigation menu, select your app (`staticwebsite`)
+3. Go to **App settings**
+4. Click **General settings**
+5. Scroll down and choose **Delete app**
+6. Confirm deletion when prompted
+
+---
+
+### What Gets Deleted
+
+| Resource                | Description                        |
+| ----------------------- | ---------------------------------- |
+| Hosted Application      | Your live website is taken offline |
+| S3 Storage Bucket       | All static build files are removed |
+| CloudFront Distribution | CDN configuration is deleted       |
+| CI/CD Configuration     | All pipeline settings are cleared  |
+
+> Your AWS account will no longer be billed for any of these resources after deletion.
+
+## Author
 
 **Vishwa Patel** — Learning Cloud Engineering, majoring in Computer Science @ CUNY Queens College  
 Building hands-on AWS projects on the path to a Cloud Engineering Internship.
