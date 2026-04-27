@@ -1,12 +1,12 @@
-# 🌐 Static Website Hosting on AWS (React + Vite + Amplify)
+# Static Website Hosting on AWS (React + Vite + Amplify)
 
-## 🚀 Project Overview
+## Project Overview
 
 This project demonstrates how I built and deployed a React application using Vite and hosted it on AWS using fully managed cloud architecture.
 
 ---
 
-## 🧠 What I did
+## What I did
 
 - Building a React app using Vite
 - Using Git and GitHub for version control
@@ -16,7 +16,7 @@ This project demonstrates how I built and deployed a React application using Vit
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 Developer → GitHub → AWS Amplify → CloudFront CDN → Users
@@ -24,14 +24,14 @@ Developer → GitHub → AWS Amplify → CloudFront CDN → Users
 
 ### Why This Architecture?
 
-- ✅ No servers required (serverless)
-- ✅ Scales automatically
-- ✅ Fast performance using CDN
-- ✅ Continuous deployment on every push
+- No servers required (serverless)
+- Scales automatically
+- Fast performance using CDN
+- Continuous deployment on every push
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Technology        | Purpose                  |
 | ----------------- | ------------------------ |
@@ -46,7 +46,7 @@ Note: Amazon S3 and Amazon CloudFront are automatically integrated in AWS Amplif
 
 ---
 
-## 📦 Project Setup
+## Project Setup
 
 ### Create React App
 
@@ -65,7 +65,7 @@ npm run dev
 
 ---
 
-## 🔁 Git Setup & Deployment
+## Git Setup & Deployment
 
 ```bash
 git init
@@ -135,7 +135,7 @@ https://your-app.amplifyapp.com
 | CloudFront CDN      | ~$0.0085/10k requests |
 | **Total (typical)** | **~$0.50 – $3/month** |
 
-> 💡 Very low cost because no servers are running 24/7.
+> Very low cost because no servers are running 24/7.
 
 ---
 
@@ -153,7 +153,7 @@ https://your-app.amplifyapp.com
 
 ### Why Clean Up?
 
-To avoid unexpected AWS charges, it is recommended to delete the app and all resources created during this project.
+To avoid unexpected AWS charges, it is recommended to delete the app and all backend resources created during this project.
 
 ---
 
