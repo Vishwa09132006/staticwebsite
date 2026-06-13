@@ -12,7 +12,7 @@ This project demonstrates how I built and deployed a React application using Vit
 - Using Git and GitHub for version control
 - Deploying applications to the cloud
 - Understanding CI/CD pipelines
-- Using a CDN for fast global delivery
+- Using a CDN for fast delivery
 
 ---
 
